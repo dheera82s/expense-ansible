@@ -62,3 +62,9 @@
       login_host: mysql.dheera82s.online
       target: /app/schema/backend.sql
   
+  - name: daemon reload and restart service
+    ansible.builtin.systemd_service:
+      enable: true
+      state: restarted
+      daemon_reload: true
+      name: backend
