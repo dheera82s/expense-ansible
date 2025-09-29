@@ -30,7 +30,7 @@
       url: https://expense-builds.s3.us-east-1.amazonaws.com/expense-backend-v2.zip
       dest: /tmp/backend.zip
 
-  - name: unzip backend cpde
+  - name: unzip backend code
     ansible.builtin.unarchive:
       src: /tmp/backend.zip
       dest: /app
@@ -45,11 +45,11 @@
       src: backend.service
       dest: /etc/systemed/system/backend.service
 
-  - name: install python libraries
+  - name: install python libs 
     ansible.builtin.pip:
       name: pymysql
       executable: pip3.9
-      
+
   - name: import mysql data
     community.mysql.mysql_db:
       state: import
