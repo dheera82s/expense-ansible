@@ -10,6 +10,6 @@
 
   - name: install nodejs
     ansible.builtin.command: 
-    name: nodejs
-    state: present 
+      name: nodejs
+      state: present 
     
